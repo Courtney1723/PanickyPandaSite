@@ -3,6 +3,10 @@ import styled from "styled-components";
 import PandaBg from '../images/PandaBackgroundVid.mp4';
 import { Link } from "react-router-dom";
 
+const scrollToTop = () => {
+    window.scrollTo(0, 0)
+}
+
 const Section = styled.section`
     background-clip: url(${PandaBg});
     background-repeat: repeat;
@@ -274,7 +278,7 @@ function Home() {
             <Content>  
                 <Header>  
                 <VideoContainer>
-                    <video src={PandaBg} autoplay="true" playsInline="true" loop="true" muted="true" type='video/mp4' height="100%" controls={false}/>
+                    <video src={PandaBg} autoPlay={true} playsInline={true} loop={true} muted={true} type='video/mp4' height="100%" controls={false}/>
                 </VideoContainer>                                      
                     <Desc>
                     Welcome to Panda's Gaming Channel! <br />My pronouns are she/her. <br/>Some of my favorite genres to play are horror, survival, and PvP/FPS. <br />Viewers can look forward to seeing a lot of survival failures and funny moments as I traverse through all types of new worlds. <br />I hope to see you on my next adventure!
@@ -315,8 +319,8 @@ function Home() {
                 <Links>
                     <LinksContainer>
                         <ButtonContainer>
-                            <Link to="/" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Home</Link> 
-                        </ButtonContainer>                     
+                            <Link onClick={scrollToTop} to="/" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Home</Link> 
+                        </ButtonContainer>                   
                         <Button href="https://discord.gg/UDGWDxPxfB" target="_blank">
                             Discord
                         </Button>
@@ -337,7 +341,7 @@ function Home() {
                             Tip
                         </Button> 
                         <ButtonContainer>
-                            <Link to="Emojis" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Emojis</Link> 
+                            <Link to="/Emojis" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Emojis</Link> 
                         </ButtonContainer>                                                                 
                     </LinksContainer>
                 </Links>                

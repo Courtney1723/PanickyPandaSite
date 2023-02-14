@@ -1,6 +1,18 @@
-import React from "react";
+import {React, useLayoutEffect} from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const scrollToTop = () => {
+    window.scrollTo({top: 0, behavior: "smooth"})
+}
+
+const Wrapper = ({children}) => {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
+  return children
+}
 
 const Section = styled.section`
     height: 10vh;
@@ -36,11 +48,13 @@ function Navbar() {
       <div >
         <Section>
             <TitleContainer>
-                <Link to="/" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>
+            <Wrapper>
+                <Link onClick={scrollToTop} to="#" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>
                 <Title>
                     Panicky Panda
                 </Title>
                 </Link> 
+            </Wrapper>
             </TitleContainer>
         </Section>
       </div>

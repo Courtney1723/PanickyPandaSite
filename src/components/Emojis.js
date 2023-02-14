@@ -3,8 +3,11 @@ import styled from "styled-components";
 import PandaBg from '../images/PandaBackgroundVid.mp4';
 import { Link } from "react-router-dom";
 
+const scrollToTop = () => {
+    window.scrollTo({top: 0, behavior: "smooth"})
+}
+
 const Section = styled.section`
-    background-image: url(${PandaBg});
     height: 100%;
     width: 100%;
     margin-left: -10px;
@@ -261,7 +264,7 @@ const VideoContainer = styled.div`
   background-color: rgb(0, 1, 21);
   overflow: hidden;
   margin-left: -4vw;
-  transform: scaleX(2);
+  transform: scaleX(1.28);
 
 `;
 
@@ -269,11 +272,11 @@ const VideoContainer = styled.div`
 function Home() {
     return (
       <div >      
-        <Section>                                                  
-            <Content>    
+        <Section>     
             <VideoContainer>
                 <video src={PandaBg} autoplay="true" playsInline="true" loop="true" muted="true" type='video/mp4' height="100%" controls={false}/>
-            </VideoContainer>                   
+            </VideoContainer>                                                          
+            <Content>                      
                 <Header>                                        
                     <MainButton href="https://www.twitch.tv/panickypanda_197" target="_blank">
                         Follow me on Twitch
@@ -354,8 +357,8 @@ function Home() {
                             Tip
                         </Button>   
                         <ButtonContainer>
-                            <Link to="Emojis" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Emojis</Link> 
-                        </ButtonContainer>                                                                                          
+                            <Link onClick={scrollToTop} to="/Emojis" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Emojis</Link> 
+                        </ButtonContainer>                                                                                     
                     </LinksContainer>
                 </Links>                
             </Content>
