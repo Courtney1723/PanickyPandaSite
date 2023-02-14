@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="Emojis" element={<Emojis />}/>
+          <Route path="/Emojis" element={<Emojis />}/>
           <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
