@@ -22,9 +22,13 @@ const Section = styled.section`
     padding-bottom: 5vh;
     background: linear-gradient(180deg, #000, rgb(2, 0, 30), rgb(2, 0, 20), rgb(1, 0, 20), transparent);
     padding-top: 1.5vh;
-    margin-top: -1vh;
+    margin-top: -2vh;
     margin-left: calc(5vw - 10px);
     text-align: center;
+
+    @media screen and (max-width: 767px) {
+        height: 6vh;
+    }
 `;
 
 const TitleContainer = styled.div`

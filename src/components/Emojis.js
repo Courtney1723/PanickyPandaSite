@@ -1,80 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import PandaBg from '../images/PandaBackgroundVid.mp4';
-import { Link } from "react-router-dom";
-
-const scrollToTop = () => {
-    window.scrollTo({top: 0, behavior: "smooth"})
-}
 
 const Section = styled.section`
-    height: 100%;
-    width: 100%;
     margin-left: -10px;
-    margin-top: -10px;
+    margin-top: -20vh;
     padding-right: 20px;
-    padding-bottom: 10vh;
-    margin-bottom: -10px;
+    margin-bottom: 10vh;
     padding-top: 12vh;
-`;
 
-const Header = styled.div`
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 6vh;
+    @media screen and (max-width: 767px) {
+        margin-top: -24vh;
+    }
 `;
 
 const Content = styled.div`
     background: linear-gradient(rgb(0, 1, 21), rgb(0, 1, 21), rgb(41, 39, 74), rgb(41, 39, 74), rgb(0, 1, 21), rgb(0, 1, 21), rgb(41, 39, 74));
-    height: fit-content;
+    height: 80vh;
     width: 90vw;
     margin-left: 5vw;
-    padding-bottom: 2vh;
-    padding-top: 17vh;    
 `;
-
-const MainButton = styled.a`
-    display: inline;
-    border-radius: 18px;
-    width: 50vw;
-    height: 10vh;
-    line-height: 6vmin;
-    font-size: 4vmin;
-    text-align: center;
-    color: rgb(255, 230, 150);
-    text-shadow: 0.3vmin 0.3vmin 0.3vmin rgba(255, 230, 150, 0.8);
-    background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgb(41, 39, 74), rgb(2, 0, 39), #000);
-    text-decoration: none;
-    box-shadow: 1vmin 1vmin 1vmin 1vmin rgb(2, 0, 39);
-    padding: 4vmin;
-    border-style: groove;
-    border-width: 0.2vmax;
-    border-color: rgb(41, 39, 74);
-
-    &:hover {
-        background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgba(255, 230, 150, 0.5), rgb(2, 0, 39), #000);
-        text-shadow: 0.3vmin 0.3vmin rgb(2, 0, 39);
-        line-height: 8vmin;
-        font-size: 4.5vmin;
-    }
-`;
-
-// const StreamContainer = styled.div`
-//     display: block;
-//     height: 40vh;
-//     width: 90vw;
-//     margin-top: 8vh;
-//     align-items: center;
-//     justify-content: center;
-// `;
-
-// const StreamVideo = styled.video`
-//     height: 40vh;
-//     width: 80vw;
-//     position: inline;
-
-// `;
 
 const Emojis = styled.div`
     margin-top: 8vh;
@@ -84,8 +29,7 @@ const Emojis = styled.div`
     text-align: center;
     margin-left: 2vw;
     margin-right: 2vw;
-    height: 100vh;
-    padding-bottom: 8vh;
+    height: 80vh;
     border-style: groove;
     border-color: rgba(41, 39, 74, 0.6);
 `;
@@ -140,7 +84,6 @@ const EmojiContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding-top: 4vh;
-    padding-bottom: 2vh;
     margin-left: 2vw;
 `;
 
@@ -181,77 +124,6 @@ const Emoji = styled.img`
     }
 `;
 
-const Links = styled.div`
-    margin-left: 1vw;
-    margin-right: 1vw;
-    height: fit-content;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-`;
-const LinksContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-const Button = styled.a`
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    border-radius: 18px;
-    width: 20vw;
-    height: 8vh;
-    line-height: 6vh;
-    font-size: 3vmin;
-    text-align: center;
-    color: rgb(255, 230, 150);
-    background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgb(41, 39, 74), rgb(2, 0, 39), #000);
-    text-decoration: none;
-    text-shadow: 0.1vmin 0.1vmin rgb(222, 177, 255);
-    box-shadow: 2vmin 2vmin 2vmin rgb(2, 0, 39);
-    margin: 1vmin;
-    padding-top: 1vh;
-    border-style: groove;
-    border-color: rgb(255, 230, 150);
-    border-width: 0.1vmax;
-    word-break: keep-all;
-
-    &:hover {
-        background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgba(255, 230, 150, 0.5), rgb(2, 0, 39), #000);
-        text-shadow: 0.3vmin 0.3vmin rgb(2, 0, 39);
-        font-size: 4vmin;
-    }
-
-`;
-
-const ButtonContainer = styled.div`
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    border-radius: 18px;
-    width: 20vw;
-    height: 8vh;
-    line-height: 6vh;
-    font-size: 3vmin;
-    text-align: center;
-    color: rgb(255, 230, 150);
-    background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgb(41, 39, 74), rgb(2, 0, 39), #000);
-    text-shadow: 0.1vmin 0.1vmin rgb(222, 177, 255);
-    box-shadow: 2vmin 2vmin 2vmin rgb(2, 0, 39);
-    margin: 1vmin;
-    padding-top: 1vh;
-    border-style: groove;
-    border-color: rgb(255, 230, 150);
-    border-width: 0.1vmax;
-    word-break: keep-all;
-
-    &:hover {
-        background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgba(255, 230, 150, 0.5), rgb(2, 0, 39), #000);
-        text-shadow: 0.3vmin 0.3vmin rgb(2, 0, 39);
-        font-size: 4vmin;
-    }
-`;
-
 const VideoContainer = styled.div`
   bottom: -10px;
   left: -10px;
@@ -276,12 +148,7 @@ function Home() {
             <VideoContainer>
                 <video src={PandaBg} autoplay="true" playsInline="true" loop="true" muted="true" type='video/mp4' height="100%" controls={false}/>
             </VideoContainer>                                                          
-            <Content>                      
-                <Header>                                        
-                    <MainButton href="https://www.twitch.tv/panickypanda_197" target="_blank">
-                        Follow me on Twitch
-                    </MainButton>  
-                </Header>                                        
+            <Content>                                        
                 <Emojis>
                     <EmojiMainTitle>
                         Emojis
@@ -331,36 +198,7 @@ function Home() {
                         </EmojiTopSubsContainer>
                         </EmojiTopSubsTitle>   
                     </EmojiTopSubs> */}
-                </Emojis>                
-                <Links>
-                    <LinksContainer>
-                        <ButtonContainer>
-                            <Link to="/" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Home</Link> 
-                        </ButtonContainer>                      
-                        <Button href="https://discord.gg/UDGWDxPxfB" target="_blank">
-                            Discord
-                        </Button>
-                        <br />
-                        <Button href="https://www.youtube.com/channel/UCcF2Jl3jGRZmGVThrowbq0A" target="_blank">
-                            YouTube
-                        </Button>  
-                        <br />
-                        <Button href="https://twitter.com/PanickyPanda197" target="_blank">
-                            Twitter
-                        </Button> 
-                        <br />   
-                        <Button href="https://www.tiktok.com/@panickypanda_197" target="_blank">
-                            Tik-Tok
-                        </Button>   
-                        <br />                        
-                        <Button href="https://streamlabs.com/panickypanda_197/tip" target="_blank">
-                            Tip
-                        </Button>   
-                        <ButtonContainer>
-                            <Link onClick={scrollToTop} to="/Emojis" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Emojis</Link> 
-                        </ButtonContainer>                                                                                     
-                    </LinksContainer>
-                </Links>                
+                </Emojis>                             
             </Content>
         </Section>
       </div>

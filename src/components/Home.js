@@ -1,11 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import PandaBg from '../images/PandaBackgroundVid.mp4';
-import { Link } from "react-router-dom";
-
-const scrollToTop = () => {
-    window.scrollTo(0, 0)
-}
 
 const Section = styled.section`
     background-clip: url(${PandaBg});
@@ -25,7 +20,11 @@ const Content = styled.div`
     width: 90vw;
     margin-left: 5vw;
     padding-bottom: 2vh;
-    padding-top: 12vh;    
+    padding-top: 1vh;   
+    
+    @media screen and (max-width: 797px) {
+        margin-top: -6vh; 
+    }
 `;
 
 const Header = styled.div`
@@ -46,32 +45,6 @@ const Desc = styled.p`
     text-shadow: 0.4vmin 0.4vmin 0.4vmin rgba(0, 8, 150, 0.8);
     margin-left: 1vmin;
     margin-right: 1vmin;
-`;
-
-const MainButton = styled.a`
-    display: inline;
-    border-radius: 18px;
-    width: 50vw;
-    height: 10vh;
-    line-height: 6vmin;
-    font-size: 4vmin;
-    text-align: center;
-    color: rgb(255, 230, 150);
-    text-shadow: 0.1vmin 0.1vmin rgba(255, 230, 150, 0.8);
-    background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgb(41, 39, 74), rgb(2, 0, 39), #000);
-    text-decoration: none;
-    box-shadow: 1vmin 1vmin 1vmin 1vmin rgb(2, 0, 39);
-    padding: 4vmin;
-    border-style: groove;
-    border-width: 0.2vmax;
-    border-color: rgb(41, 39, 74);
-
-    &:hover {
-        background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgba(255, 230, 150, 0.5), rgb(2, 0, 39), #000);
-        text-shadow: 0.3vmin 0.3vmin rgb(2, 0, 39);
-        line-height: 8vmin;
-        font-size: 4.5vmin;
-    }
 `;
 
 // const StreamContainer = styled.div`
@@ -185,75 +158,6 @@ const PCDesc = styled.p`
     margin: 1vmin; 
 `;
 
-const Links = styled.div`
-    margin-left: 1vw;
-    margin-right: 1vw;
-    height: fit-content;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-`;
-const LinksContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-const Button = styled.a`
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    border-radius: 18px;
-    width: 30vw;
-    height: 6vh;
-    line-height: 6vh;
-    font-size: 3vmin;
-    text-align: center;
-    color: rgb(255, 230, 150);
-    background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgb(41, 39, 74), rgb(2, 0, 39), #000);
-    text-decoration: none;
-    text-shadow: 0.1vmin 0.1vmin 0.1vmin rgb(255, 230, 150);
-    box-shadow: 2vmin 2vmin 2vmin rgb(2, 0, 39);
-    margin: 1vmin;
-    border-style: groove;
-    border-color: rgb(255, 230, 150);
-    border-width: 0.1vmax;
-    word-break: keep-all;
-
-    &:hover {
-        background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgba(255, 230, 150, 0.5), rgb(2, 0, 39), #000);
-        text-shadow: 0.3vmin 0.3vmin rgb(2, 0, 39);
-        font-size: 4.5vmin;
-    }
-
-`;
-
-const ButtonContainer = styled.div`
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    border-radius: 18px;
-    width: 20vw;
-    height: 6vh;
-    line-height: 6vh;
-    font-size: 3vmin;
-    text-align: center;
-    color: rgb(255, 230, 150);
-    background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgb(41, 39, 74), rgb(2, 0, 39), #000);
-    text-shadow: 0.1vmin 0.1vmin 0.1vmin rgb(255, 230, 150);
-    box-shadow: 2vmin 2vmin 2vmin rgb(2, 0, 39);
-    margin: 1vmin;
-    border-style: groove;
-    border-color: rgb(255, 230, 150);
-    border-width: 0.1vmax;
-
-    &:hover {
-        background: linear-gradient(15deg, #000, rgb(2, 0, 39), rgba(255, 230, 150, 0.5), rgb(2, 0, 39), #000);
-        text-shadow: 0.3vmin 0.3vmin rgb(2, 0, 39);
-        font-size: 4vmin;
-        color: rgb(255, 230, 150);
-    }
-`;
-
 const VideoContainer = styled.div`
   bottom: -10px;
   left: -10px;
@@ -282,10 +186,7 @@ function Home() {
                 </VideoContainer>                                      
                     <Desc>
                     Welcome to Panda's Gaming Channel! <br />My pronouns are she/her. <br/>Some of my favorite genres to play are horror, survival, and PvP/FPS. <br />Viewers can look forward to seeing a lot of survival failures and funny moments as I traverse through all types of new worlds. <br />I hope to see you on my next adventure!
-                    </Desc>
-                    <MainButton href="https://www.twitch.tv/panickypanda_197" target="_blank">
-                        Follow me on Twitch
-                    </MainButton>          
+                    </Desc>         
                     {/* <StreamContainer>
                         <StreamVideo autoPlay muted type='video/mp4' controls={true} title="Panda_Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} url="https://player.twitch.tv/?enableExtensions=false&muted=true&parent=twitch.tv&player=popout&quality=auto&t=0h3m57s&video=1719391606" target="_blank"/>
                     </StreamContainer> */}
@@ -315,36 +216,7 @@ function Home() {
                         Monitor • 27" Dell Curved 144hz S2721HGF <br /><br />Motherboard • MSI Z370-A PRO <br /><br />CPU • Intel I5 9600k @ 4.5GHz <br /><br />RAM • 2x8GB Corsair Vengeance Pro RGB @3200Mhz <br /><br />GPU • NVidia GTX 1070 <br /><br />Operating System • Windows 10 Pro 64Bit
                         </PCDesc>
                     </PCContainer>
-                </About>               
-                <Links>
-                    <LinksContainer>
-                        <ButtonContainer>
-                            <Link onClick={scrollToTop} to="/" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Home</Link> 
-                        </ButtonContainer>                   
-                        <Button href="https://discord.gg/UDGWDxPxfB" target="_blank">
-                            Discord
-                        </Button>
-                        <br />
-                        <Button href="https://www.youtube.com/channel/UCcF2Jl3jGRZmGVThrowbq0A" target="_blank">
-                            YouTube
-                        </Button>  
-                        <br />
-                        <Button href="https://twitter.com/PanickyPanda197" target="_blank">
-                            Twitter
-                        </Button> 
-                        <br />   
-                        <Button href="https://www.tiktok.com/@panickypanda_197" target="_blank">
-                            Tik-Tok
-                        </Button>   
-                        <br />                        
-                        <Button href="https://streamlabs.com/panickypanda_197/tip" target="_blank">
-                            Tip
-                        </Button> 
-                        <ButtonContainer>
-                            <Link to="/Emojis" style={{ textDecoration: 'none', color: "rgb(255, 230, 150)" }}>Emojis</Link> 
-                        </ButtonContainer>                                                                 
-                    </LinksContainer>
-                </Links>                
+                </About>                             
             </Content>
         </Section>
       </div>
